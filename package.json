@@ -33,6 +33,7 @@
     "json-loader": "^0.5.4",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-router": "^3.0.2",
     "resolve-url-loader": "^1.6.1",
     "sass-loader": "^5.0.1",
     "style-loader": "^0.13.1"
