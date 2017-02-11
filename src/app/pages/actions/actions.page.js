@@ -1,5 +1,3 @@
-import React from 'react';
-
 export class ActionsPage extends React.Component {
   constructor(props) {
     super(props);
