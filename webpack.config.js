@@ -31,7 +31,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpg|svg|ttf|eot|woff|woff2)$/i,
-        loader: 'file-loader?name=[path]/[name].[ext]?[hash]'
+        loader: 'file-loader?name=asserts/[name].[ext]?[hash]'
       },
       {
         test: /\.scss$/,

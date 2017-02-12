@@ -1,11 +1,47 @@
+$red: #ff7545;
+$orange: #ff9100;
+$sea: #03aeb0;
+$green: #5db706;
+$violet: #665bce;
+$blue: #0198cd;
+$gray: #ccc;
+$lightBlack: #242424;
+
 .header-info {
-  background: #242424;
-  height: 50px;
+  padding: 1rem 0;
+  background: $lightBlack;
+}
+
+.social {
+  text-align: right;
+
+  &-item {
+    display: inline-block;
+    margin-left: 1.1rem;
+    color: white;
+  }
+
+  &-link {
+    display: inline-block;
+    width: 4.5rem;
+    line-height: 2;
+    border-radius: 50%;
+    font-size: 2.3rem;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.05);
+    transition: all .5s;
+
+    &:hover {
+      color: $lightBlack;
+      background: white;
+      transform: scale(1.1);
+    }
+  }
 }
 
 .main-nav {
   display: block;
-  padding: 50px 0;
+  padding: 5rem 0;
   text-align: right;
 
   &-item {
@@ -15,18 +51,87 @@
 
   &-link {
     display: inline-block;
-    padding: 5rem 0;
+    position: relative;
+    padding: 3rem 0;
     width: 15rem;
-    background: #43caca;
+    background: white;
     color: #fff;
     font-size: 2rem;
     font-weight: bold;
     text-align: center;
     transition: all 0.8s;
 
+    &:before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 5%;
+      bottom: 0;
+      left: 0;
+      transition: all 0.5s;
+
+      &:hover {
+        height: 100%;
+      }
+    }
+
+    &.orange {
+      color: $orange;
+      &:before {
+        background: $orange;
+      }
+    }
+    &.red {
+      color: $red;
+      &:before {
+        background: $red;
+      }
+    }
+    &.blue {
+      color: $blue;
+      &:before {
+        background: $blue;
+      }
+    }
+    &.green {
+      color: $green;
+      &:before {
+        background: $green;
+      }
+    }
+    &.violet {
+      color: $violet;
+      &:before {
+        background: $violet;
+      }
+    }
+
     &:hover,
     &.active {
-      background: #5abb49;
+      color: white;
+
+      .main-nav-title {
+        color: white;
+      }
+
+      &:before {
+        height: 100%;
+      }
     }
+  }
+
+  &-icon {
+    position: relative;
+    display: block;
+    margin-top: 0.5rem;
+    z-index: 1;
+    font-size: 5rem;
+  }
+
+  &-title {
+    position: relative;
+    z-index: 1;
+    color: $gray;
+    transition: all 0.5s;
   }
 }

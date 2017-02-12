@@ -1,11 +1,11 @@
+import './theme/main.scss';
+
 import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
 import { MainLayout } from './layout/main';
 import { ActionsPage } from './pages/actions';
 import { AboutPage } from './pages/about';
-
-import './theme/main.scss';
 
 const APP_ELEMENT = document.querySelector('.app');
 
