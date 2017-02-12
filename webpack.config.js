@@ -8,7 +8,7 @@ module.exports = {
   context: __dirname + '/src',
 
   entry: {
-    index: './app/app'
+    index: './app'
   },
 
   output: {
@@ -35,7 +35,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader!resolve-url-loader!autoprefixer-loader!sass-loader?sourceMap'
+        loader: 'style-loader!css-loader!resolve-url-loader!autoprefixer-loader!sass-loader'
       },
       {
         test: /\.json$/,

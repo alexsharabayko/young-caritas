@@ -5,6 +5,8 @@ import { MainLayout } from './layout/main';
 import { ActionsPage } from './pages/actions';
 import { AboutPage } from './pages/about';
 
+import './theme/main.scss';
+
 const APP_ELEMENT = document.querySelector('.app');
 
 class AppComponent extends React.Component {
