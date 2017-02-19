@@ -1,0 +1,51 @@
+$red: #ff7545;
+$orange: #ff9100;
+$sea: #03aeb0;
+$green: #5db706;
+$violet: #665bce;
+$blue: #0198cd;
+$gray: #ccc;
+$lightBlack: #242424;
+
+.actions-page {
+  padding: 2rem;
+  background: white;
+}
+
+.actions {
+  &-item {
+    overflow: hidden;
+    margin-bottom: 5rem;
+
+    .image {
+      width: 50%;
+      margin-right: 2rem;
+      float: left;
+    }
+
+    .title {
+      margin-bottom: 2rem;
+      color: $red;
+      font-size: 2.5rem;
+      line-height: 1.3;
+    }
+
+    .description {
+      font-size: 1.5rem;
+      line-height: 1.2;
+      text-align: justify;
+    }
+
+    &:nth-child(even) {
+      .image {
+        margin-right: 0;
+        margin-left: 2rem;
+        float: right;
+      }
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

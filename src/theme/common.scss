@@ -1,3 +1,12 @@
+$red: #ff7545;
+$orange: #ff9100;
+$sea: #03aeb0;
+$green: #5db706;
+$violet: #665bce;
+$blue: #0198cd;
+$gray: #ccc;
+$lightBlack: #242424;
+
 html, body {
   height: 100%;
   font-size: 10px;
@@ -5,7 +14,7 @@ html, body {
 }
 
 body {
-  background: url("./images/geometry2.png");
+  background: url("./images/cork-wallet.png");
 }
 
 .app {
@@ -13,7 +22,7 @@ body {
 }
 
 .thin-wrapper {
-  max-width: 100rem;
+  max-width: 120rem;
   margin: 0 auto;
 }
 
@@ -23,4 +32,11 @@ body {
 }
 .clearfix:after {
   clear: both;
+}
+
+.page-title {
+  margin-bottom: 2rem;
+  color: $lightBlack;
+  font-size: 3rem;
+  text-align: center;
 }
