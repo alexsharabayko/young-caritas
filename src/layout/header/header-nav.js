@@ -45,8 +45,8 @@ export class HeaderNav extends React.Component {
             return (
               <li className="main-nav-item" key={i}>
                 <Link className={linkClassName} activeClassName="active" to={nav.href}>
-                  <span className="main-nav-title">{nav.title}</span>
                   <i className={iconClassName}></i>
+                  <span className="main-nav-title">{nav.title}</span>
                 </Link>
               </li>
             );

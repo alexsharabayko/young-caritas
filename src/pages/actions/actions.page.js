@@ -24,6 +24,8 @@ export class ActionsPage extends React.Component {
               manufacturers from all over the world. They include American companies (Ford, General Motors), European
               (Alfa Romeo, Lotus, BMW, FIAT, Seat) as well as Japanese ones and many others.
             </p>
+
+            <a href="javascript:void(0)">Read more</a>
           </li>
 
           <li className="actions-item">
