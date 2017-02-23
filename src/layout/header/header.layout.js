@@ -1,14 +1,13 @@
 import './header.layout.scss';
-
-import { HeaderInfo } from './header-info';
 import { HeaderNav } from './header-nav';
+import { HeaderSlider } from './header-slider';
 
 export class HeaderLayout extends React.Component {
   render() {
     return (
       <header className="header">
-        <HeaderInfo/>
         <HeaderNav/>
+        <HeaderSlider/>
       </header>
     );
   }

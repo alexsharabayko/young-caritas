@@ -27,8 +27,8 @@ class AppComponent extends React.Component {
 render((
   <Router history={browserHistory}>
     <Route path="" component={MainLayout}>
-      <Route path="/" component={ActionsPage}></Route>
-      <Route path="/about" component={AboutPage}></Route>
+      <Route path="/" component={AboutPage}></Route>
+      <Route path="/actions" component={ActionsPage}></Route>
     </Route>
   </Router>
 ), APP_ELEMENT);

@@ -3,56 +3,79 @@ import { Link } from 'react-router';
 const NAVS = [
   {
     href: '/',
-    title: 'Акции',
-    icon: 'feed',
-    color: 'orange'
+    title: 'О нас'
   },
   {
-    href: '/about',
-    title: 'О нас',
-    icon: 'group',
-    color: 'green'
+    href: '/actions',
+    title: 'Акции'
   },
   {
     href: '/lectures',
-    title: 'Лекции',
-    icon: 'calendar',
-    color: 'blue'
+    title: 'Лекции'
   },
   {
     href: '/help',
-    title: 'Помощь',
-    icon: 'heart',
-    color: 'red'
+    title: 'Помощь'
   },
   {
     href: '/register',
-    title: 'Подписка',
-    icon: 'sign-in',
-    color: 'violet'
+    title: 'Подписка'
+  }
+];
+
+const SOCIAL = [
+  {
+    title: 'VK',
+    icon: 'vk',
+    href: 'https://vk.com'
+  },
+  {
+    title: 'Facebook',
+    icon: 'facebook',
+    href: 'https://www.facebook.com'
+  },
+  {
+    title: 'Twitter',
+    icon: 'twitter',
+    href: 'https://twitter.com'
+  },
+  {
+    title: 'Instagram',
+    icon: 'instagram',
+    href: 'https://www.instagram.com/'
   }
 ];
 
 export class HeaderNav extends React.Component {
   render() {
     return (
-      <ul className="main-nav thin-wrapper">
-        {
-          NAVS.map((nav, i) => {
-            let linkClassName = `main-nav-link ${nav.color}`;
-            let iconClassName = `main-nav-icon fa fa-${nav.icon}`;
+      <div className="header-nav">
+        <div className="thin-wrapper clearfix">
+          <ul className="main-nav">
+            {NAVS.map((item, i) => {
+              return (
+                <li key={i} className="main-nav-item">
+                  <Link className="main-nav-link" activeClassName="active" to={item.href}>{item.title}</Link>
+                </li>
+              );
+            })}
+          </ul>
 
-            return (
-              <li className="main-nav-item" key={i}>
-                <Link className={linkClassName} activeClassName="active" to={nav.href}>
-                  <i className={iconClassName}></i>
-                  <span className="main-nav-title">{nav.title}</span>
-                </Link>
-              </li>
-            );
-          })
-        }
-      </ul>
+          <ul className="social-nav">
+            {SOCIAL.map((item, i) => {
+              let iconClassName = `social-icon fa fa-${item.icon}`;
+
+              return (
+                <li key={i} className="social-nav-item">
+                  <a className="social-nav-link" href={item.href} target="_blank" title={item.title}>
+                    <i className={iconClassName}></i>
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      </div>
     );
   }
 }

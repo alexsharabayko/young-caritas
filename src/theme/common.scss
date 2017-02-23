@@ -14,7 +14,7 @@ html, body {
 }
 
 body {
-  background: url("./images/cork-wallet.png");
+  background: white;
 }
 
 .app {
@@ -35,12 +35,17 @@ body {
   clear: both;
 }
 
-.page-title {
-  margin-bottom: 2rem;
-  font-size: 4rem;
-  text-align: center;
-  background: #fff;
-  padding: 2rem;
-  font-weight: 100;
-  box-shadow: 0.2rem 0.2rem 1rem 0.2rem rgba(0, 0, 0, 0.2);
+.ib-center {
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    width: 0;
+    vertical-align: middle;
+  }
+
+  &-cell {
+    display: inline-block;
+    vertical-align: middle;
+  }
 }
