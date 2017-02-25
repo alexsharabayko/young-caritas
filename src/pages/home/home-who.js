@@ -10,17 +10,19 @@ export class HomeWhoComponent extends React.Component {
     let { data } = this.props;
 
     return (
-      <div className="home-section">
-        <ul>
+      <div className="home-section home-who">
+        <ul className="who-list thin-wrapper">
           {
             data.map((person, i) => {
               return (
-                <li>
-                  <div>
+                <li className="item" key={i}>
+                  <i className="fa fa-quote-right quote"></i>
+
+                  <div className="ava">
                     <img src={IMAGES[person.photo]} alt=""/>
                   </div>
-                  <p>{person.description}</p>
-                  <div>{person.position}</div>
+                  <p className="description">{person.description}</p>
+                  <div className="position">{person.position}</div>
                 </li>
               );
             })
