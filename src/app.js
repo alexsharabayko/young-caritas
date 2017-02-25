@@ -4,6 +4,7 @@ import { render } from 'react-dom';
 import { Router, Route, browserHistory } from 'react-router';
 
 import { MainLayout } from './layout/main';
+import { HomePage } from './pages/home';
 import { ActionsPage } from './pages/actions';
 import { AboutPage } from './pages/about';
 
@@ -27,8 +28,9 @@ class AppComponent extends React.Component {
 render((
   <Router history={browserHistory}>
     <Route path="" component={MainLayout}>
-      <Route path="/" component={AboutPage}></Route>
+      <Route path="/" component={HomePage}></Route>
       <Route path="/actions" component={ActionsPage}></Route>
+      <Route path="/about" component={AboutPage}></Route>
     </Route>
   </Router>
 ), APP_ELEMENT);

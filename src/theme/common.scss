@@ -1,11 +1,11 @@
-$red: #ff7545;
-$orange: #ff9100;
-$sea: #03aeb0;
-$green: #5db706;
-$violet: #665bce;
-$blue: #0198cd;
-$gray: #ccc;
-$lightBlack: #242424;
+$black: #353732;
+$gray: #7e8179;
+$orange: rgba(247, 198, 80, 1);
+$yellow: rgba(231, 232, 112, 1);
+$green: rgba(163, 224, 98, 1);
+$blue: rgba(139, 217, 231, 1);
+$purple: rgba(241, 217, 223, 1);
+$red: rgba(247, 87, 80, 1);
 
 html, body {
   height: 100%;
@@ -14,12 +14,12 @@ html, body {
 }
 
 body {
-  background: white;
+  background: #f1f3ee;
+  color: $black;
 }
 
 .app {
-  height: 100%;
-  color: #242424;
+  min-height: 100%;
 }
 
 .thin-wrapper {
@@ -48,4 +48,41 @@ body {
     display: inline-block;
     vertical-align: middle;
   }
+}
+
+.orange {
+  background: $orange;
+}
+.orange-text {
+  color: $orange;
+}
+.yellow {
+  background: $yellow;
+}
+.yellow-text {
+  color: $yellow;
+}
+.green {
+  background: $green;
+}
+.green-text {
+  color: $green;
+}
+.blue {
+  background: $blue;
+}
+.blue-text {
+  color: $blue;
+}
+.purple {
+  background: $purple;
+}
+.purple-text {
+  color: $purple;
+}
+.red {
+  background: $red;
+}
+.red-text {
+  color: $red;
 }

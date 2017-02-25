@@ -1,0 +1,132 @@
+$black: #353732;
+$gray: #7e8179;
+$orange: rgba(247, 198, 80, 1);
+$yellow: rgba(231, 232, 112, 1);
+$green: rgba(163, 224, 98, 1);
+$blue: rgba(139, 217, 231, 1);
+
+$bigImageSize: 36rem;
+$smallImageSize: 21rem;
+$smallImageLeft: -$smallImageSize / 2.7;
+
+.home {
+
+  &-section {
+    padding: 6rem 0;
+
+    .title {
+      margin-bottom: 2rem;
+      color: $black;
+      font-size: 2rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+
+  &-text {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+    align-items: flex-start;
+
+    .article {
+      order: 0;
+      flex: 7 1 auto;
+      align-self: center;
+      text-align: center;
+
+      .title {
+        margin-bottom: 2rem;
+        color: $black;
+        font-size: 3rem;
+        text-transform: uppercase;
+      }
+
+      .description {
+        color: $gray;
+        font-size: 1.4rem;
+        line-height: 1.6;
+      }
+    }
+
+    .double-image {
+      order: 0;
+      flex: 3 1 auto;
+      align-self: auto;
+      position: relative;
+      margin-left: 10rem;
+      font-size: 0;
+
+      .big {
+        width: 100%;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+
+      .small {
+        position: absolute;
+        bottom: 0;
+        left: $smallImageLeft;
+        width: $smallImageSize;
+        overflow: hidden;
+        border-radius: 50%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
+    &.reverse {
+      flex-direction: row-reverse;
+
+      .double-image {
+        margin-left: 0;
+        margin-right: 10rem;
+
+        .small {
+          left: auto;
+          right: $smallImageLeft;
+        }
+      }
+    }
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    .item {
+      display: inline-block;
+    }
+
+    $iconSize: 28rem;
+
+    .icon {
+      display: inline-block;
+      margin-bottom: 1rem;
+      width: $iconSize;
+      line-height: $iconSize;
+      font-size: 13rem;
+      background: white;
+      border-radius: 50%;
+      text-align: center;
+      box-shadow: inset 0 0 0 0 #fd8067;
+      text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+      transition: all 0.5s;
+
+      &:hover {
+        box-shadow: inset 0 0 0 1rem #fd8067;
+      }
+    }
+
+    .description {
+      font-size: 1.4rem;
+      text-align: center;
+      text-transform: uppercase;
+    }
+  }
+}
