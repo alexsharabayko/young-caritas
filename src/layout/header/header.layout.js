@@ -4,10 +4,12 @@ import { HeaderSlider } from './header-slider';
 
 export class HeaderLayout extends React.Component {
   render() {
+    let { isSliderNav } = this.props;
+
     return (
       <header className="header">
         <HeaderNav/>
-        <HeaderSlider/>
+        <HeaderSlider isSliderNav={isSliderNav}/>
       </header>
     );
   }

@@ -1,7 +1,15 @@
 $black: #353732;
+$red: rgba(247, 87, 80, 1);
 
 .header {
+  padding-top: 5rem;
+
   &-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
     padding: 1rem;
     background: #d2d7cd;
   }
@@ -81,6 +89,11 @@ $black: #353732;
   &-image {
     width: 100%;
   }
+
+  &.short {
+    overflow: hidden;
+    height: 25rem;
+  }
 }
 
 .slider-info {
@@ -93,17 +106,63 @@ $black: #353732;
   text-align: center;
 }
 
+$loginBorderPadding: 1.5rem;
+
 .logo {
   display: inline-block;
-  padding: 1rem;
+  position: relative;
+  padding: $loginBorderPadding;
   color: white;
   font-size: 6rem;
   font-weight: 900;
   text-transform: uppercase;
-  border: 2px solid white;
 
   &-image {
     width: 4.5rem;
+  }
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 0.3rem solid white;
+    transition: all 0.3s;
+    transition-delay: 0.3s;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    top: $loginBorderPadding;
+    left: $loginBorderPadding;
+    right: $loginBorderPadding;
+    bottom: $loginBorderPadding;
+    opacity: 0;
+    border: 0.3rem solid $red;
+    transition: all 0.3s;
+  }
+
+  &:hover {
+    &:before {
+      top: $loginBorderPadding;
+      left: $loginBorderPadding;
+      right: $loginBorderPadding;
+      bottom: $loginBorderPadding;
+      opacity: 0;
+      transition-delay: 0s;
+    }
+
+    &:after {
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      opacity: 1;
+      transition-delay: 0.3s;
+    }
   }
 }
 
