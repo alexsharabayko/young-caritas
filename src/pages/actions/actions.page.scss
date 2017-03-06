@@ -1,3 +1,135 @@
-body {
+$black: #353732;
+$gray: #7e8179;
+$orange: rgba(247, 198, 80, 1);
+$yellow: rgba(231, 232, 112, 1);
+$green: rgba(163, 224, 98, 1);
+$blue: rgba(139, 217, 231, 1);
+$blue-light: #b5e7f0;
+$blue-strong: #61cbde;
+$purple: rgba(241, 217, 223, 1);
+$red: rgba(247, 87, 80, 1);
 
+.actions-page {
+  padding: 2rem 0;
+}
+
+.actions {
+  height: 65rem;
+  overflow: hidden;
+}
+
+.actions-title-list {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  height: 100%;
+  overflow: auto;
+
+  .item {
+    padding: 1.5rem;
+    margin-bottom: 0.1rem;
+    background: $blue;
+    color: white;
+    cursor: pointer;
+    transition: all 0.5s;
+
+    &.pre-active {
+      background: $blue-light;
+    }
+
+    &:hover {
+      background: $blue-strong;
+    }
+
+    &.active {
+      padding: 2.5rem 1.5rem;
+      background: white;
+      color: $blue-strong;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  .title {
+    margin-bottom: 0.5rem;
+    font-size: 2rem;
+    text-align: center;
+
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  .date {
+    text-align: center;
+    font-size: 1.3rem;
+
+    &-text {
+      display: inline-block;
+
+      &:first-letter {
+        text-transform: uppercase;
+      }
+    }
+  }
+
+  .icon {
+    margin-right: 0.3rem;
+  }
+}
+
+.active-action {
+  display: inline-block;
+  padding: 2rem;
+  vertical-align: top;
+  width: 75%;
+  height: 100%;
+  overflow: auto;
+  background: white;
+  color: $blue-strong;
+
+  .title {
+    margin-bottom: 1rem;
+    font-size: 2.4em;
+    text-transform: uppercase;
+  }
+
+  .when-where,
+  .goal {
+    margin-bottom: 1rem;
+    font-size: 1.6em;
+    color: $gray;
+
+    .item {
+      display: inline-block;
+      margin-right: 1rem;
+
+      &:last-child {
+        margin-right: 0;
+        margin-left: 1rem;
+      }
+    }
+  }
+
+  .goal {
+    color: $blue-strong;
+  }
+
+  .description {
+    font-size: 1.4em;
+    font-weight: 100;
+    line-height: 1.3;
+    text-align: justify;
+    color: $gray;
+
+    .p {
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .icon {
+    margin-right: 0.5rem;
+  }
 }
