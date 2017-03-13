@@ -6,12 +6,12 @@ export class LecturesCalendar extends React.Component {
     super(props);
 
     this.state = {
-      date: new Date()
+      date: new Date(),
+      data: props.data.map(d => Object.assign({}, d, { when: new Date(d.when) }))
     };
   }
 
   changeMonth(increase) {
-    debugger;
     let state = this.state;
 
     let newDate = new Date(state.date.getTime());
@@ -22,7 +22,8 @@ export class LecturesCalendar extends React.Component {
     this.setState(state);
   }
 
-  getMonthByDate(date) {
+  getMonthByDate() {
+    let { date } = this.state;
     let monthStart = new Date(date.getFullYear(), date.getMonth(), 1);
     let monthEnd = new Date(date.getFullYear(), date.getMonth() + 1, 1);
     let result = [];
@@ -43,46 +44,78 @@ export class LecturesCalendar extends React.Component {
     return result;
   }
 
-  render() {
+  renderEvent(day) {
+    let { data } = this.state;
+    let item = data.find(d => day && d.when.toDateString() === day.toDateString());
+
+    if (item) {
+      return (
+        <div className="image">
+          <img src={item.titleImage} alt=""/>
+        </div>
+      );
+    }
+  }
+
+  get tableHeader() {
     let { date } = this.state;
-    let month = this.getMonthByDate(date);
 
     return (
-      <table>
-        <thead>
-        <tr>
-          <th colSpan="2" onClick={this.changeMonth.bind(this, false)}>Left</th>
-          <th colSpan="3">{MONTHS[date.getMonth()]} {date.getFullYear()}</th>
-          <th colSpan="2" onClick={this.changeMonth.bind(this, true)}>Right</th>
-        </tr>
-        <tr>
-          {
-            DAYS.map((day, i) => {
-              return (
-                <th key={i}>{day}</th>
-              );
-            })
-          }
-        </tr>
-        </thead>
-        <tbody>
+      <thead>
+      <tr>
+        <th colSpan="2" onClick={this.changeMonth.bind(this, false)}>Left</th>
+        <th colSpan="3">{MONTHS[date.getMonth()]} {date.getFullYear()}</th>
+        <th colSpan="2" onClick={this.changeMonth.bind(this, true)}>Right</th>
+      </tr>
+      <tr>
         {
-          month.map((week, i) => {
+          DAYS.map((day, i) => {
             return (
-              <tr key={i}>
-                {
-                  week.map((day, j) => {
-                    return (
-                      <td key={j}>{day && day.getDate()}</td>
-                    );
-                  })
-                }
-              </tr>
+              <th key={i}>{day}</th>
             );
           })
         }
-        </tbody>
-      </table>
+      </tr>
+      </thead>
+    );
+  }
+
+  get tableBody() {
+    let month = this.getMonthByDate();
+
+    return (
+      <tbody>
+      {
+        month.map((week, i) => {
+          return (
+            <tr key={i}>
+              {
+                week.map((day, j) => {
+                  return (
+                    <td key={j}>
+                      {day && day.getDate()}{day ? '.' : ''}
+
+                      {this.renderEvent(day)}
+                    </td>
+                  );
+                })
+              }
+            </tr>
+          );
+        })
+      }
+      </tbody>
+    )
+  }
+
+  render() {
+    return (
+      <div className="lectures-table">
+        <table>
+          {this.tableHeader}
+          {this.tableBody}
+        </table>
+      </div>
     );
   }
 }
