@@ -7,23 +7,9 @@ import { MainLayout } from './layout/main';
 import { HomePage } from './pages/home';
 import { ActionsPage } from './pages/actions';
 import { AboutPage } from './pages/about';
+import { LecturesPage } from './pages/lectures';
 
 const APP_ELEMENT = document.querySelector('.app');
-
-class AppComponent extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-        <ActionsPage/>
-        <AboutPage/>
-      </div>
-    );
-  }
-}
 
 render((
   <Router history={browserHistory}>
@@ -31,6 +17,7 @@ render((
       <Route path="/" component={HomePage}></Route>
       <Route path="/actions" component={ActionsPage}></Route>
       <Route path="/about" component={AboutPage}></Route>
+      <Route path="/lectures" component={LecturesPage}></Route>
     </Route>
   </Router>
 ), APP_ELEMENT);
