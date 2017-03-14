@@ -44,14 +44,35 @@ export class LecturesCalendar extends React.Component {
     return result;
   }
 
+  moveTooltip(event) {
+    let { currentTarget, clientX, clientY } = event;
+    let tooltip = currentTarget.querySelector('.event-tooltip');
+    let targetBounds = currentTarget.getBoundingClientRect();
+    let tooltipBounds = tooltip.getBoundingClientRect();
+
+    let left = clientX - targetBounds.left - tooltipBounds.width / 2;
+    let top = clientY - targetBounds.top - tooltipBounds.height - 5;
+
+    console.log(`translate(${left}px, ${top}px)`);
+    tooltip.style.transform = `translate(${left}px, ${top}px)`;
+  }
+
   renderEvent(day) {
     let { data } = this.state;
     let item = data.find(d => day && d.when.toDateString() === day.toDateString());
 
     if (item) {
       return (
-        <div className="image">
-          <img src={item.titleImage} alt=""/>
+        <div className="event" onMouseMove={this.moveTooltip.bind(this)}>
+          <div className="image">
+            <img src={item.titleImage} alt=""/>
+          </div>
+
+          <div className="event-time">{item.when.getHours()}:{item.when.getMinutes()}</div>
+
+          <div className="event-tooltip" ref="tooltip">
+            {item.title}
+          </div>
         </div>
       );
     }
@@ -63,9 +84,16 @@ export class LecturesCalendar extends React.Component {
     return (
       <thead>
       <tr>
-        <th colSpan="2" onClick={this.changeMonth.bind(this, false)}>Left</th>
-        <th colSpan="3">{MONTHS[date.getMonth()]} {date.getFullYear()}</th>
-        <th colSpan="2" onClick={this.changeMonth.bind(this, true)}>Right</th>
+        <th colSpan="2" className="prev">
+          <i className="fa fa-arrow-left" onClick={this.changeMonth.bind(this, false)}></i>
+        </th>
+        <th colSpan="3">
+          <span className="month">{MONTHS[date.getMonth()]}</span>&nbsp;
+          <span className="year">{date.getFullYear()}</span>
+        </th>
+        <th colSpan="2" className="next">
+          <i className="fa fa-arrow-right" onClick={this.changeMonth.bind(this, true)}></i>
+        </th>
       </tr>
       <tr>
         {
@@ -91,8 +119,10 @@ export class LecturesCalendar extends React.Component {
             <tr key={i}>
               {
                 week.map((day, j) => {
+                  let tdClassName = classNames({ inactive: !day });
+
                   return (
-                    <td key={j}>
+                    <td className={tdClassName} key={j}>
                       {day && day.getDate()}{day ? '.' : ''}
 
                       {this.renderEvent(day)}

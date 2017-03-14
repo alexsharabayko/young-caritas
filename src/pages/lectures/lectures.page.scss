@@ -1,5 +1,6 @@
 $black: #353732;
 $gray: #7e8179;
+$gray-light: #b5b5b5;
 $orange: rgba(247, 198, 80, 1);
 $yellow: rgba(231, 232, 112, 1);
 $green: rgba(163, 224, 98, 1);
@@ -10,7 +11,8 @@ $purple: rgba(241, 217, 223, 1);
 $red: rgba(247, 87, 80, 1);
 
 .lectures-table {
-  padding: 1rem;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
   background: white;
   border-radius: 0.5rem;
 
@@ -22,8 +24,15 @@ $red: rgba(247, 87, 80, 1);
     font-size: 1.6rem;
 
     th {
+      font-weight: 400;
       padding: 1rem;
     }
+  }
+
+  thead tr {
+    color: white;
+    background: $green;
+    border: 2px solid $green;
   }
 
   tr {
@@ -35,25 +44,101 @@ $red: rgba(247, 87, 80, 1);
     width: 14.2857143%;
     height: 12rem;
     padding: 0.5rem;
-    border: 0.1rem solid $gray;
+    border: 0.2rem solid $green;
     font-size: 1.4rem;
     text-align: right;
+
+    &.inactive {
+      background: rgba(0, 0, 0, 0.05);
+    }
   }
 
-  .image {
+  .event {
     position: absolute;
     width: 70%;
     height: 60%;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     text-align: center;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+
+    &-time {
+      color: $gray;
+    }
+
+    &-tooltip {
+      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 1rem;
+      color: white;
+      background: $green;
+      text-transform: capitalize;
+      white-space: nowrap;
+      border-radius: 0.3rem;
+
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        bottom: -0.5rem;
+        left: 50%;
+        width: 1rem;
+        height: 1rem;
+        background: inherit;
+        transform: rotate(45deg) translate(-0.3rem, 0.3rem);
+      }
+    }
+
+    &:hover {
+      .event-tooltip {
+        display: block;
+      }
+    }
+  }
+
+  .image {
+    margin-bottom: 0.3rem;
+    height: 100%;
 
     img {
       display: inline-block;
       max-width: 100%;
       max-height: 100%;
       border-radius: 0.5rem;
+    }
+  }
+
+  .month {
+    font-size: 2.5rem;
+    font-weight: 500;
+  }
+
+  .year {
+    font-size: 2.7rem;
+    font-weight: 300;
+  }
+
+  .prev {
+    text-align: right;
+  }
+
+  .next {
+    text-align: left;
+  }
+
+  .prev,
+  .next {
+    i {
+      width: 3rem;
+      line-height: 3rem;
+      background: white;
+      text-align: center;
+      border-radius: 50%;
+      color: $gray-light;
+      cursor: pointer;
     }
   }
 }
