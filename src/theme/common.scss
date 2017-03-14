@@ -10,7 +10,10 @@ $red: rgba(247, 87, 80, 1);
 html, body {
   height: 100%;
   font-size: 10px;
-  font-family: Arial;
+}
+
+* {
+  font-family: Roboto;
 }
 
 body {
