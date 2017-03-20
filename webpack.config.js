@@ -35,7 +35,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loader: 'style-loader!css-loader!resolve-url-loader!autoprefixer-loader!sass-loader'
+        loader: 'style-loader!css-loader!resolve-url-loader!postcss-loader!sass-loader'
       },
       {
         test: /\.json$/,

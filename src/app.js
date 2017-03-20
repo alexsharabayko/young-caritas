@@ -1,7 +1,7 @@
 import './theme/main.scss';
 
 import { render } from 'react-dom';
-import { Router, Route, browserHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 
 import { MainLayout } from './layout/main';
 import { HomePage } from './pages/home';
@@ -12,7 +12,7 @@ import { LecturesPage } from './pages/lectures';
 const APP_ELEMENT = document.querySelector('.app');
 
 render((
-  <Router history={browserHistory}>
+  <Router history={hashHistory}>
     <Route path="" component={MainLayout}>
       <Route path="/" component={HomePage}></Route>
       <Route path="/actions" component={ActionsPage}></Route>
