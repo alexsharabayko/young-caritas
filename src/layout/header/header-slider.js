@@ -70,10 +70,11 @@ export class HeaderSlider extends React.Component {
     }
   }
 
-  get link() {
+  get logo() {
     return (
       <Link to="/" className="logo">
         Y<img className="logo-image" src={ornament} alt=""/>ng caritas
+        <small>Belarus</small>
       </Link>
     );
   }
@@ -95,7 +96,7 @@ export class HeaderSlider extends React.Component {
 
         <div className="slider-info ib-center">
           <div className="ib-center-cell">
-            {this.link}
+            {this.logo}
             {this.sliderNav}
           </div>
         </div>

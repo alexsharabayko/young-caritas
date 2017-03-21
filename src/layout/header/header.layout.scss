@@ -120,6 +120,14 @@ $loginBorderPadding: 1.5rem;
     width: 4.5rem;
   }
 
+  small {
+    margin-left: 1rem;
+    color: $red;
+    font-size: 5rem;
+    font-style: italic;
+    text-transform: capitalize;
+  }
+
   &:before {
     content: '';
     position: absolute;
