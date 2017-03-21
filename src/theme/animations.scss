@@ -54,18 +54,54 @@
 $duration: 0.2s;
 
 .fade-top {
+  opacity: 0;
   transform: translateY(-100%);
   animation: fade-in-top $duration ease-in forwards;
 }
 .fade-right {
+  opacity: 0;
   transform: translateX(100%);
   animation: fade-in-right $duration ease-in forwards;
 }
 .fade-bottom {
+  opacity: 0;
   transform: translateY(100%);
   animation: fade-in-bottom $duration ease-in forwards;
 }
 .fade-left {
+  opacity: 0;
   transform: translateX(-100%);
   animation: fade-in-left $duration ease-in forwards;
+}
+
+.an-duration-2 {
+  animation-duration: 0.2s;
+}
+.an-duration-4 {
+  animation-duration: 0.4s;
+}
+.an-duration-6 {
+  animation-duration: 0.6s;
+}
+.an-duration-8 {
+  animation-duration: 0.8s;
+}
+.an-duration-10 {
+  animation-duration: 1s;
+}
+
+.an-delay-2 {
+  animation-delay: 0.2s;
+}
+.an-delay-4 {
+  animation-delay: 0.4s;
+}
+.an-delay-6 {
+  animation-delay: 0.6s;
+}
+.an-delay-8 {
+  animation-delay: 0.8s;
+}
+.an-delay-10 {
+  animation-delay: 1s;
 }

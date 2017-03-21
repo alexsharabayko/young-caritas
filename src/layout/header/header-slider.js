@@ -41,7 +41,15 @@ export class HeaderSlider extends React.Component {
         <ul className="slide-nav">
           {
             SLIDE_NAV.map((item, i) => {
-              let itemClassName = `slide-nav-item`;
+              let itemClassName = classNames(
+                'slide-nav-item',
+                'an-duration-4',
+                `an-delay-${i * 2 + 2}`,
+                {
+                  'fade-left': i % 2 === 0,
+                  'fade-right': i % 2 === 1,
+                }
+              );
               let circleClassName = `circle ib-center ${item.color}`;
 
               return (
