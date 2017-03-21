@@ -25,7 +25,7 @@ export class ActionsPage extends React.Component {
     return (
       <div className="actions">
         <TitlesList data={data} activeIndex={activeIndex} colors={COLORS} onClick={this.setActiveIndex.bind(this)}/>
-        <ActiveAction data={data} activeIndex={activeIndex} colors={COLORS}/>
+        <ActiveAction data={data} activeIndex={activeIndex} colors={COLORS} key={activeIndex}/>
       </div>
     );
   }

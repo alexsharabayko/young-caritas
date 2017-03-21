@@ -14,34 +14,31 @@ export class ActiveAction extends React.Component {
     let titleClasses = classNames('title', textColorClass);
 
     return (
-      <CSSTransitionGroup transitionName="thing" transitionAppear={true} transitionAppearTimeout={500}
-                          transitionEnterTimeout={500} transitionLeaveTimeout={500}>
-        <div className="active-action">
-          <h3 className={titleClasses}>{activeAction.title}</h3>
-          <div className="when-where">
+      <div className="active-action">
+        <h3 className={titleClasses}>{activeAction.title}</h3>
+        <div className="when-where">
           <span className="item">
             <i className="icon fa fa-calendar"></i>
             {activeAction.when}
           </span>
-            |
-            <span className="item">
+          |
+          <span className="item">
             <i className="icon fa fa-map-marker"></i>
-              {activeAction.address}
+            {activeAction.address}
           </span>
-          </div>
-          <div className={goalClasses}>
-            <i className="icon fa fa-tag"></i>
-            {activeAction.goal}
-          </div>
-          <div className="description">
-            {
-              activeAction.description.map((item, key) => {
-                return <p className="p" key={key}>{item}</p>;
-              })
-            }
-          </div>
         </div>
-      </CSSTransitionGroup>
+        <div className={goalClasses}>
+          <i className="icon fa fa-tag"></i>
+          {activeAction.goal}
+        </div>
+        <div className="description">
+          {
+            activeAction.description.map((item, key) => {
+              return <p className="p" key={key}>{item}</p>;
+            })
+          }
+        </div>
+      </div>
     );
   }
 }
