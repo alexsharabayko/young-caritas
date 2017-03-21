@@ -4,6 +4,8 @@ import data from './data.json';
 import { TitlesList } from './titles-list';
 import { ActiveAction } from './acive-action';
 
+const COLORS = ['orange', 'yellow', 'green', 'blue'];
+
 export class ActionsPage extends React.Component {
   constructor(props) {
     super(props);
@@ -21,11 +23,9 @@ export class ActionsPage extends React.Component {
     let { activeIndex } = this.state;
 
     return (
-      <div className="thin-wrapper actions-page">
-        <div className="actions">
-          <TitlesList data={data} activeIndex={activeIndex} onClick={this.setActiveIndex.bind(this)}/>
-          <ActiveAction data={data} activeIndex={activeIndex}/>
-        </div>
+      <div className="actions">
+        <TitlesList data={data} activeIndex={activeIndex} colors={COLORS} onClick={this.setActiveIndex.bind(this)}/>
+        <ActiveAction data={data} activeIndex={activeIndex} colors={COLORS}/>
       </div>
     );
   }

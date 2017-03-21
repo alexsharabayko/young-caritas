@@ -8,17 +8,23 @@ export class TitlesList extends React.Component {
   }
 
   render() {
-    let { data, activeIndex } = this.props;
+    let { data, activeIndex, colors } = this.props;
 
     return (
       <ul className="actions-title-list">
         {
           data.map((item, i) => {
-            let itemClassName = classNames({
-              item: true,
-              active: activeIndex === i,
-              'pre-active': Math.abs(activeIndex - i) === 1
-            });
+            let color = colors[i % colors.length];
+            let isActive = activeIndex === i;
+
+            let itemClassName = classNames(
+              !isActive && color,
+              isActive && `${color}-text`,
+              {
+                item: true,
+                active: isActive,
+              }
+            );
 
             return (
               <li className={itemClassName}
