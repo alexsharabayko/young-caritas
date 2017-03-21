@@ -6,9 +6,7 @@ import { LecturesCalendar } from './lectures-calendar';
 export class LecturesPage extends React.Component {
   render() {
     return (
-      <div className="thin-wrapper">
-        <LecturesCalendar data={data}/>
-      </div>
+      <LecturesCalendar data={data}/>
     );
   }
 }
