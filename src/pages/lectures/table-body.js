@@ -1,5 +1,7 @@
 import { TableEvent } from './table-event';
 
+const FADE_CLASSES = ['fade-top', 'fade-right', 'fade-bottom', 'fade-left'];
+
 export class TableBody extends React.Component {
   getMonthByDate() {
     let { date } = this.props;
@@ -35,7 +37,10 @@ export class TableBody extends React.Component {
             <tr key={i}>
               {
                 week.map((day, j) => {
-                  let tdClassName = classNames({ inactive: !day });
+                  let tdClassName = classNames(
+                    FADE_CLASSES[Math.floor(Math.random() * FADE_CLASSES.length)],
+                    { inactive: !day }
+                  );
 
                   return (
                     <td className={tdClassName} key={j}>

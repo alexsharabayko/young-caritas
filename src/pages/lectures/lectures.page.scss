@@ -137,6 +137,11 @@ $red: rgba(247, 87, 80, 1);
       border-radius: 50%;
       color: $gray-light;
       cursor: pointer;
+      transition: all 0.4s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
   }
 }

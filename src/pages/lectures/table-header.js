@@ -3,12 +3,27 @@ const MONTHS = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 
 
 export class TableHeader extends React.Component {
 
-  changeMonth() {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      increase: true
+    };
+  }
+
+  changeMonth(increase) {
+    this.props.onChangeMonth(increase);
+
+    this.setState({ ...this.state, increase });
   }
 
   render() {
+    let { increase } = this.state;
     let { date } = this.props;
+    let titleClassName = classNames({
+      'fade-right': increase,
+      'fade-left': !increase
+    });
 
     return (
       <thead>
@@ -16,7 +31,7 @@ export class TableHeader extends React.Component {
         <th colSpan="2" className="prev">
           <i className="fa fa-arrow-left" onClick={this.changeMonth.bind(this, false)}></i>
         </th>
-        <th colSpan="3">
+        <th colSpan="3" className={titleClassName} key={Math.random()}>
           <span className="month">{MONTHS[date.getMonth()]}</span>&nbsp;
           <span className="year">{date.getFullYear()}</span>
         </th>

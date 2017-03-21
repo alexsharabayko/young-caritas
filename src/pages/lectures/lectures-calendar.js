@@ -28,8 +28,8 @@ export class LecturesCalendar extends React.Component {
     return (
       <div className="lectures-table">
         <table>
-          <TableHeader date={date} />
-          <TableBody date={date} data={data} />
+          <TableHeader date={date} onChangeMonth={::this.changeMonth} />
+          <TableBody date={date} data={data} key={date} />
         </table>
       </div>
     );

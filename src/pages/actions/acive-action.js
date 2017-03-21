@@ -10,13 +10,14 @@ export class ActiveAction extends React.Component {
     let activeAction = this.processActive(data[activeIndex]);
 
     let textColorClass = `${colors[activeIndex % colors.length]}-text`;
-    let goalClasses = classNames('goal', textColorClass);
-    let titleClasses = classNames('title', textColorClass);
+    let goalClasses = classNames('goal', 'fade-right', textColorClass);
+    let titleClasses = classNames('title', 'fade-right', textColorClass);
 
     return (
       <div className="active-action">
         <h3 className={titleClasses}>{activeAction.title}</h3>
-        <div className="when-where">
+
+        <div className="when-where fade-left">
           <span className="item">
             <i className="icon fa fa-calendar"></i>
             {activeAction.when}
@@ -27,11 +28,13 @@ export class ActiveAction extends React.Component {
             {activeAction.address}
           </span>
         </div>
+
         <div className={goalClasses}>
           <i className="icon fa fa-tag"></i>
           {activeAction.goal}
         </div>
-        <div className="description">
+
+        <div className="description fade-bottom">
           {
             activeAction.description.map((item, key) => {
               return <p className="p" key={key}>{item}</p>;
